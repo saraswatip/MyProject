@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+            function calculate()
+            {
+                var amt=document.getElementById("amount").value;
+                var rate=document.getElementById("rate").value;
+                var dur=document.getElementById("duration").value;
+                var months=dur*12;
+                var r=(rate/12)*0.01;
+                var interest=(amt*r)/months;
+                var total= ((amt/months)+interest).toFixed(2);
+                document.getElementById("emi").value=total;
+            }
+        </script>
+    </head>
+    <body>
+        <table width="50" height="100">
+            <tr>
+                <td>Amount</td><td><input type="text" id="amount" size="10" ></input></td>
+            </tr>
+            <tr>
+                <td>Interest Rate</td><td><input type="text" id="rate" size="10" ></input></td>
+            </tr>
+            <tr>  
+                <td>Duration In Years</td><td><input type="text" id="duration" size="10" ></input></td>
+            </tr> 
+            <tr>
+                <td>EMI</td><td><input type="text" id="emi" size="10"></td>
+            </tr>
+            <tr>
+                <td></td><td><input type="button" id="calculate" value="Calulate EMI" onclick="calculate()"></input></td>
+            </tr>
+        </table>
+    </body>
+</html>
